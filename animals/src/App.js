@@ -1,9 +1,11 @@
-
-
 function App() {
+  const handleClick = () => {
+    console.log('Add Animal');
+  };
+
   return (
     <div>
-      Show Animal List
+      <button onClick={handleClick}>Add Animal</button>
     </div>
   );
 }

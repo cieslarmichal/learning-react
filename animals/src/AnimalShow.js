@@ -1,5 +1,3 @@
-
-
 function AnimalShow() {
   return (
     <div>
