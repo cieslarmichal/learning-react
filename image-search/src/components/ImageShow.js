@@ -1,8 +1,7 @@
 
-function ImageShow() {
+function ImageShow({image}) {
   return (
-    <div>
-    </div>
+    <div>{image.id}</div>
   );
 }
 
