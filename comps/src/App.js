@@ -1,25 +1,27 @@
-import {GoBell, GoCloudDownload, GoDatabase, GoHeart} from "react-icons/go";
-import Button from "./components/Button";
+import Accordion from "./components/Accordion";
 
 function App () {
-  const handleClick = () => {
-    console.log("Button clicked");
-  }
+  const items = [
+    {
+      id: '1',
+      label: "First Item",
+      content: "This is the first item content"
+    },
+    {
+      id: '2',
+      label: "Second Item",
+      content: "This is the second item content"
+    },
+    {
+      id: '3',
+      label: "Third Item",
+      content: "This is the third item content"
+    },
+  ];
 
   return (
     <div>
-      <div>
-        <Button primary outline onClick={handleClick}><GoBell/>Buy now!</Button>
-      </div>
-      <div>
-        <Button secondary><GoCloudDownload/>Go to the cart</Button>
-      </div>
-      <div>
-        <Button warning><GoDatabase/>No items in cart</Button>
-      </div>
-      <div>
-        <Button danger><GoHeart/>Add to wishlist</Button>
-      </div>
+      <Accordion items={items}/>
     </div>
   );
 }
