@@ -1,7 +1,7 @@
 import Button from '../components/Button';
 import Panel from '../components/Panel';
-import {useReducer} from 'react';
-import {produce} from 'immer'; 
+import { useReducer } from 'react';
+import { produce } from 'immer';
 
 const actionType = {
   increment: 'increment',
@@ -30,31 +30,30 @@ const reducer = (state, action) => {
   }
 };
 
-function CounterPage({initialCount = 0}) {
+function CounterPage({ initialCount = 0 }) {
   const [state, dispatch] = useReducer(produce(reducer), {
     count: initialCount,
     valueToAdd: 0,
   });
 
   const increment = () => {
-    dispatch({type: actionType.increment});
+    dispatch({ type: actionType.increment });
   };
 
   const decrement = () => {
-    dispatch({type: actionType.decrement});
-
+    dispatch({ type: actionType.decrement });
   };
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value) || 0;
 
-    dispatch({type: actionType.changeValueToAdd, payload: value});
+    dispatch({ type: actionType.changeValueToAdd, payload: value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch({type: actionType.addValueToAdd});
+    dispatch({ type: actionType.addValueToAdd });
   };
 
   return (
@@ -69,7 +68,7 @@ function CounterPage({initialCount = 0}) {
         <label>Add more</label>
         <input
           type="number"
-          value={state.valueToAdd || ""}
+          value={state.valueToAdd || ''}
           onChange={handleChange}
           className="p-1 m-3 bg-gray-50 border border-gray-300"
         />
