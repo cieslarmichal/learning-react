@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+}
+
+.header, .footer {
+  background-color: #83caff;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  background-color: #ffcccc;
+  flex: 1;
+}
+
+.menu, .ads {
+  min-width: 300px;
+  background-color: #cc99cc;
+}
+
+.ads {
+  position: sticky;
+  top: 0;
+}
+
+.item {
+  padding: 10px;
+  border: black 3px solid;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ads > p {
+  font-size: 10rem;
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu, .ads {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
