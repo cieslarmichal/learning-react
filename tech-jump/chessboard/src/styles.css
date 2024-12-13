@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.square-black, .square-white {
+  flex: 1;
+}
+
+.square-white {
+  background-color: #ffce9e;
+}
+
+.square-black {
+  background-color: #d18b47;
+}
+
+.start-button {
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the button */
+  background-color: #83caff;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
