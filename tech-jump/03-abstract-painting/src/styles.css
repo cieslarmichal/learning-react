@@ -1,0 +1,120 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.painting {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  height: 800px;
+}
+
+.painting-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.painting-column-1 {
+  flex: 2.5;
+}
+
+.painting-row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.painting-cell {
+  flex: 1;
+  border: 4px solid darkslategrey;
+}
+
+.painting-row-1 {
+  flex: 0 0 8%;
+}
+
+.painting-cell-2 {
+  flex: 2;
+}
+
+.painting-cell-3 {
+  background-color: yellow;
+  flex: 0 0 8%;
+}
+
+.painting-cell-4 {
+  background-color: yellow;
+  flex: 0 0 20%;
+}
+
+.painting-row-3 {
+  flex: 0 0 20%;
+}
+
+.painting-cell-7 {
+  flex: 0 0 8%;
+}
+
+.painting-cell-8 {
+  background-color: blue;
+}
+
+.painting-cell-9 {
+  background-color: red;
+}
+
+.painting-cell-10, .painting-cell-11, .painting-cell-12 {
+  flex: 3;
+}
+
+.painting-column-3 {
+  flex: 0 0 25%;
+}
+
+.painting-cell-12 {
+  background-color: yellow;
+}
+
+.painting-cell-13 {
+  background-color: red;
+  flex: 4.5;
+  border-right: 0;
+}
+
+.painting-cell-14 {
+  background-color: black;
+  flex: 2.06;
+}
+
+.painting-cell-15 {
+  flex: 2.06;
+}
+
+.painting-cell-22 {
+  border-right: 0;
+  flex: 1.04;
+}
+
+.painting-cell-23 {
+  border-left: 0;
+}
+
+.painting-cell-16 {
+  background-color: red;
+  flex: 4.6;
+  border-left: 0;
+}
+
+.painting-cell-19 {
+  background-color: black;
+}
+
+.painting-row-4 {
+  flex: 2.23;
+}
+
+
