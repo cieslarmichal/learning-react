@@ -1,15 +1,16 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .painting {
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  width: 600px;
-  height: 800px;
+  width: 700px;
+  height: 900px;
 }
 
 .painting-column {
@@ -34,7 +35,7 @@ body {
 }
 
 .painting-row-1 {
-  flex: 0 0 8%;
+  flex: 0 0 80px;
 }
 
 .painting-cell-2 {
@@ -43,20 +44,20 @@ body {
 
 .painting-cell-3 {
   background-color: yellow;
-  flex: 0 0 8%;
+  flex: 0 0 80px;
 }
 
 .painting-cell-4 {
   background-color: yellow;
-  flex: 0 0 20%;
+  flex: 0 0 180px;
 }
 
 .painting-row-3 {
-  flex: 0 0 20%;
+  flex: 0 0 180px;
 }
 
 .painting-cell-7 {
-  flex: 0 0 8%;
+  flex: 0 0 80px;
 }
 
 .painting-cell-8 {
@@ -67,7 +68,9 @@ body {
   background-color: red;
 }
 
-.painting-cell-10, .painting-cell-11, .painting-cell-12 {
+.painting-cell-10,
+.painting-cell-11,
+.painting-cell-12 {
   flex: 3;
 }
 
@@ -81,31 +84,31 @@ body {
 
 .painting-cell-13 {
   background-color: red;
-  flex: 4.5;
+  flex: 0 0 360px;
   border-right: 0;
 }
 
 .painting-cell-14 {
   background-color: black;
-  flex: 2.06;
 }
 
-.painting-cell-15 {
-  flex: 2.06;
+.painting-cell-17 {
+  flex: 0 0 80px;
 }
 
 .painting-cell-22 {
   border-right: 0;
-  flex: 1.04;
+  flex: 0 0 80px;
 }
 
 .painting-cell-23 {
   border-left: 0;
+  flex: 0 0 80px;
 }
 
 .painting-cell-16 {
   background-color: red;
-  flex: 4.6;
+  flex: 0 0 360px;
   border-left: 0;
 }
 
@@ -114,7 +117,5 @@ body {
 }
 
 .painting-row-4 {
-  flex: 2.23;
+  flex: 0 0 170px;
 }
-
-
