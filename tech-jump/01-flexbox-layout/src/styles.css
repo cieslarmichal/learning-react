@@ -1,18 +1,20 @@
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
-  height: 100vh;
 }
 
-.header, .footer {
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
   background-color: #83caff;
   text-align: center;
 }
 
 .main {
   display: flex;
-  flex-direction: row;
 }
 
 .content {
@@ -20,16 +22,47 @@ body {
   flex: 1;
 }
 
-.menu, .ads {
-  min-width: 300px;
+.menu,
+.ads {
   background-color: #cc99cc;
+  flex: 0.2;
+}
+
+nav ul li {
+  display: block;
+  color: black;
+  padding: 15px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+nav > ul > li > a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .ads {
   position: sticky;
+  align-self: flex-start;
   top: 0;
+  flex-direction: column;
 }
 
+.ads > div {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: black 3px solid;
+}
+
+header,
+footer,
 .item {
   padding: 10px;
   border: black 3px solid;
@@ -49,21 +82,6 @@ p {
   text-align: center;
 }
 
-.ads > p {
-  font-size: 10rem;
+.ads > div {
+  font-size: 7rem;
 }
-
-@media (max-width: 768px) {
-  .main {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .menu, .ads {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-
-
