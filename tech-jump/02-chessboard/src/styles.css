@@ -1,17 +1,13 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
 }
 
 .board {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 400px;
   position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .board-row {
@@ -19,7 +15,9 @@ body {
   flex-direction: row;
   flex: 1;
 }
-.square-black, .square-white {
+
+.square-black,
+.square-white {
   flex: 1;
 }
 
@@ -36,7 +34,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the button */
+  transform: translate(-50%, -50%);
   background-color: #83caff;
   border: 1px solid black;
   font-size: 1.5rem;
