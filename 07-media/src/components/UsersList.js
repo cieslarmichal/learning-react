@@ -1,14 +1,25 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from '../store';
+
 function UsersList() {
-  return (
-    <div>
-      <h2>Users List</h2>
-      <ul>
-        <li>John</li>
-        <li>Jane</li>
-        <li>Joe</li>
-      </ul>
-    </div>
-  );
+  const dispatch = useDispatch();
+
+  const { isLoading, data, error } = useSelector((state) => state.users);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error fetching data.</div>;
+  }
+
+  return <div>{data.length}</div>;
 }
 
 export default UsersList;
