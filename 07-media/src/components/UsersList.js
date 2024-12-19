@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { fetchUsers, addUser, removeUser } from '../store';
+import { fetchUsers, addUser } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button';
 import useThunk from '../hooks/useThunk';
