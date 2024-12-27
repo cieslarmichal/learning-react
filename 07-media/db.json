@@ -117,6 +117,67 @@
       "name": "Cecelia Keeling"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "bd5c",
+      "userId": "9c96",
+      "title": "Luxurious Soft Bike"
+    },
+    {
+      "id": "af59",
+      "userId": "9c96",
+      "title": "Unbranded Frozen Pants"
+    },
+    {
+      "id": "1750",
+      "userId": "9c96",
+      "title": "Unbranded Rubber Cheese"
+    },
+    {
+      "id": "be1f",
+      "userId": "9c96",
+      "title": "Licensed Wooden Computer"
+    },
+    {
+      "id": "6341",
+      "userId": "90bf",
+      "title": "Oriental Bronze Tuna"
+    },
+    {
+      "id": "0e41",
+      "userId": "90bf",
+      "title": "Intelligent Wooden Ball"
+    },
+    {
+      "id": "c0d3",
+      "userId": "be6a",
+      "title": "Small Concrete Pizza"
+    },
+    {
+      "id": "92af",
+      "userId": "be6a",
+      "title": "Small Granite Fish"
+    },
+    {
+      "id": "f351",
+      "userId": "be6a",
+      "title": "Tasty Soft Chips"
+    },
+    {
+      "id": "2eca",
+      "userId": "be6a",
+      "title": "Elegant Soft Bike"
+    },
+    {
+      "id": "405a",
+      "userId": "ff6a",
+      "title": "Handmade Metal Chair"
+    },
+    {
+      "id": "1643",
+      "userId": "ff6a",
+      "title": "Bespoke Fresh Shirt"
+    }
+  ],
   "photos": []
 }
