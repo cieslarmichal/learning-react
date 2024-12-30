@@ -1,34 +1,36 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Root from "./pages/Root"
-import HomePage from "./pages/HomePage"
-import SearchPage from "./pages/search/SearchPage"
-import DetailsPage from "./pages/DetailsPage"
-import { searchLoader } from "./pages/search/searchLoader"
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Root from './pages/Root';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/search/SearchPage';
+import DetailsPage from './pages/details/DetailsPage';
+import { searchLoader } from './pages/search/searchLoader';
+import { detailsLoader } from './pages/details/detailsLoader';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     children: [
       {
         index: true,
-        element: <HomePage />
-      }, 
+        element: <HomePage />,
+      },
       {
-        path: "/search",
+        path: '/search',
         element: <SearchPage />,
         loader: searchLoader,
       },
       {
-        path: "/packages/:name",
-        element: <DetailsPage />
-      }
-    ]
-  }
+        path: '/packages/:name',
+        element: <DetailsPage />,
+        loader: detailsLoader,
+      },
+    ],
+  },
 ]);
 
 function App() {
-  return <RouterProvider router={router}/>
+  return <RouterProvider router={router} />;
 }
 
 export default App;

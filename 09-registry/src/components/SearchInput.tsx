@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {VscSearch} from "react-icons/vsc";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { VscSearch } from 'react-icons/vsc';
 
 export default function SearchInput() {
   const navigate = useNavigate();
-  
-  const [term, setTerm] = useState("");
+
+  const [term, setTerm] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
     navigate(`/search?term=${term}`);
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -27,8 +27,6 @@ export default function SearchInput() {
           placeholder="Search packages"
         />
       </div>
-
     </form>
   );
 }
-
