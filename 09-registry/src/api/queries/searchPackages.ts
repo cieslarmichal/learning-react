@@ -6,7 +6,7 @@ interface SearchResponse {
       readonly name: string;
       readonly version: string;
       readonly description: string;
-      readonly keywords: string[];
+      readonly keywords?: string[];
     };
   }[];
 }
