@@ -6,7 +6,7 @@ export interface PackageDetails {
     readonly name: string;
     readonly email: string;
   };
-  readonly mainteners: {
+  readonly maintainers: {
     readonly name: string;
     readonly email: string;
   }[];
