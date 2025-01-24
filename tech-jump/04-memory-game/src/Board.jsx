@@ -7,37 +7,39 @@ const shuffledImageUrls = [...imageUrls, ...imageUrls].sort(() => Math.random() 
 export function Board() {
   const [flippedTiles, setFlippedTiles] = useState([]);
 
-  const renderBoardTiles = () => {
-    const boardTiles = [];
+  const [blocked, setBlocked] = useState(false);
 
-    for (let i = 0; i < 12; i++) {
-      const handleTileClick = () => {
-        if (
-          flippedTiles.length % 2 === 1 &&
-          shuffledImageUrls[flippedTiles[flippedTiles.length - 1]] !== shuffledImageUrls[i]
-        ) {
-          setFlippedTiles([...flippedTiles, i]);
-
-          setTimeout(() => {
-            setFlippedTiles(flippedTiles.slice(0, flippedTiles.length - 1));
-          }, 1000);
-        } else {
-          setFlippedTiles([...flippedTiles, i]);
-        }
-      };
-
-      boardTiles.push(
-        <BoardTile
-          key={i}
-          imageUrl={shuffledImageUrls[i]}
-          handleTileClick={handleTileClick}
-          isFlipped={flippedTiles.includes(i)}
-        />,
-      );
+  const handleTileClick = (index) => {
+    if (blocked) {
+      return;
     }
 
-    return boardTiles;
+    if (
+      flippedTiles.length % 2 === 1 &&
+      shuffledImageUrls[flippedTiles[flippedTiles.length - 1]] !== shuffledImageUrls[index]
+    ) {
+      setFlippedTiles([...flippedTiles, index]);
+
+      setBlocked(true);
+
+      setTimeout(() => {
+        setFlippedTiles(flippedTiles.slice(0, flippedTiles.length - 1));
+
+        setBlocked(false);
+      }, 1000);
+    } else {
+      setFlippedTiles([...flippedTiles, index]);
+    }
   };
 
-  return <div className="board">{renderBoardTiles()}</div>;
+  const renderedBoardTiles = shuffledImageUrls.map((imageUrl, index) => (
+    <BoardTile
+      key={index}
+      imageUrl={imageUrl}
+      handleTileClick={() => handleTileClick(index)}
+      isFlipped={flippedTiles.includes(index)}
+    />
+  ));
+
+  return <div className="board">{renderedBoardTiles}</div>;
 }
