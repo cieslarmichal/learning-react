@@ -1,10 +1,18 @@
 import { BoardTile } from './BoardTile';
 import { imageUrls } from './constants/images';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
-const shuffledImageUrls = [...imageUrls, ...imageUrls].sort(() => Math.random() - 0.5);
+export function Board({ boardSize }) {
+  const shuffledImageUrls = useMemo(() => {
+    const numerOfTiles = boardSize.horizontalTiles * boardSize.verticalTiles;
 
-export function Board() {
+    const numberOfUniqueImages = numerOfTiles / 2;
+
+    const selectedImageUrls = imageUrls.sort(() => Math.random() - 0.5).slice(0, numberOfUniqueImages);
+
+    return [...selectedImageUrls, ...selectedImageUrls].sort(() => Math.random() - 0.5);
+  }, [boardSize]);
+
   const [flippedTiles, setFlippedTiles] = useState([]);
 
   const [blocked, setBlocked] = useState(false);
@@ -41,5 +49,16 @@ export function Board() {
     />
   ));
 
-  return <div className="board">{renderedBoardTiles}</div>;
+  // TODO: adjust size for lower tiles count than 4x4
+  return (
+    <div
+      className="board"
+      style={{
+        gridTemplateColumns: `repeat(${boardSize.horizontalTiles}, 1fr)`,
+        gridTemplateRows: `repeat(${boardSize.verticalTiles}, 1fr)`,
+      }}
+    >
+      {renderedBoardTiles}
+    </div>
+  );
 }
