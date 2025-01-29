@@ -2,7 +2,7 @@ import { BoardTile } from './BoardTile';
 import { imageUrls } from './constants/images';
 import { useMemo, useState } from 'react';
 
-export function Board({ boardSize }) {
+export function Board({ boardSize, onGameEnd, onFailedGuess }) {
   const shuffledImageUrls = useMemo(() => {
     const numerOfTiles = boardSize.horizontalTiles * boardSize.verticalTiles;
 
@@ -22,19 +22,28 @@ export function Board({ boardSize }) {
       return;
     }
 
-    if (
-      flippedTiles.length % 2 === 1 &&
-      shuffledImageUrls[flippedTiles[flippedTiles.length - 1]] !== shuffledImageUrls[index]
-    ) {
-      setFlippedTiles([...flippedTiles, index]);
+    if (flippedTiles.length % 2 === 1) {
+      if (shuffledImageUrls[flippedTiles[flippedTiles.length - 1]] !== shuffledImageUrls[index]) {
+        setFlippedTiles([...flippedTiles, index]);
 
-      setBlocked(true);
+        setBlocked(true);
 
-      setTimeout(() => {
-        setFlippedTiles(flippedTiles.slice(0, flippedTiles.length - 1));
+        onFailedGuess();
 
-        setBlocked(false);
-      }, 1000);
+        setTimeout(() => {
+          setFlippedTiles(flippedTiles.slice(0, flippedTiles.length - 1));
+
+          setBlocked(false);
+        }, 500);
+      } else {
+        setFlippedTiles([...flippedTiles, index]);
+
+        if (flippedTiles.length + 1 === shuffledImageUrls.length) {
+          setTimeout(() => {
+            onGameEnd();
+          }, 500);
+        }
+      }
     } else {
       setFlippedTiles([...flippedTiles, index]);
     }
@@ -49,13 +58,14 @@ export function Board({ boardSize }) {
     />
   ));
 
-  // TODO: adjust size for lower tiles count than 4x4
   return (
     <div
       className="board"
       style={{
         gridTemplateColumns: `repeat(${boardSize.horizontalTiles}, 1fr)`,
         gridTemplateRows: `repeat(${boardSize.verticalTiles}, 1fr)`,
+        width: `${boardSize.horizontalTiles * 200}px`,
+        height: `${boardSize.verticalTiles * 200}px`,
       }}
     >
       {renderedBoardTiles}
